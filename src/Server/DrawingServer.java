@@ -51,6 +51,8 @@ public class DrawingServer extends JFrame {
     private ExecutorService executorService; // 스레드 풀을 위한 ExecutorService
 
     public DrawingServer() {
+        // https://w55ng.com/entry/Java%EC%97%90%EC%84%9C-%EC%93%B0%EB%A0%88%EB%93%9C%ED%92%80-%EA%B4%80%EB%A6%AC%ED%95%98%EA%B8%B0-Executors%EC%99%80-ThreadPoolExecutor
+        // 위 웹사이트를 참고하여 스레드 풀 관리 방법을 참고하였음
         executorService = Executors.newFixedThreadPool(4); // 4개의 스레드를 가진 스레드 풀을 생성
         setTitle("Hansung Sketch Server");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -654,6 +656,8 @@ public class DrawingServer extends JFrame {
     private void printDisplay(String msg, String roomName) {
 
         //스레드 풀을 사용하여 로그 출력 작업을 별도 스레드에서 처리.
+        // 로그 출력 작업을 별도의 스레드에서 비동기적으로 처리하여, EDT 스레드가 블로킹되지 않도록 함.
+        //  UI가 멈추거나 응답이 느려지는 현상을 방지
         executorService.execute(new Runnable() { // 스레드 풀에서 스레드를 가져와 실행
             @Override
             public void run() {
@@ -697,7 +701,9 @@ public class DrawingServer extends JFrame {
     }
 }
 
-
+// https://kimsaemjava.tistory.com/61 해당 웹사이트를 참고하여 작성
+// 셀의 내용을 자동으로 줄 바꿈하고, 셀의 높이를 내용에 맞게 자동으로 조정하는 customTableCellRenderer 클래스
+// JTable의 셀 렌더러를 커스터마이징, JTable의 셀에 텍스트를 표시할 때 줄 바꿈을 지원하고, 셀의 높이를 텍스트 내용에 맞게 자동으로 조절해주는 셀 렌더러 클래스.
 class customTableCellRenderer extends JTextArea implements TableCellRenderer {
     public customTableCellRenderer() {
         setLineWrap(true); // 텍스트가 셀 너비를 초과하면 자동으로 줄 바꿈
@@ -705,11 +711,13 @@ class customTableCellRenderer extends JTextArea implements TableCellRenderer {
         setOpaque(true);
     }
 
+    // 셀의 높이를 내용에 맞게 조정
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-        setText(value != null ? value.toString() : "");
+        setText(value != null ? value.toString() : ""); // 셀의 값을 설정
         setSize(table.getColumnModel().getColumn(column).getWidth(), getPreferredSize().height);
         int preferredHeight = getPreferredSize().height;
+        // 현재 행의 높이가 계산된 높이와 다르면 행의 높이를 조정. 즉, 셀의 내용이 행에 모두 표시되도록 행의 높이를 자동으로 조절
         if (table.getRowHeight(row) != preferredHeight) {
             table.setRowHeight(row, preferredHeight);
         }

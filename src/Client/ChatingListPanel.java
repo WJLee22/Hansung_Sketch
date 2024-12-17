@@ -76,8 +76,11 @@ public class ChatingListPanel extends JPanel {
         });
     }
 
+    // https://khan0405.github.io/Java6API/javax/swing/ListCellRenderer.html
+    // 위 웹사이트를 참조하여 ListCellRenderer 인터페이스를 구현한 커스텀 클래스를 만들어 사용.
     // JList의 각 셀(채팅 메시지)의 렌더링 방식(색-모양, 이벤트 등등)을 커스텀하게해주는 ListCellRenderer 커스텀클래스
     private class ChatListCellRenderer extends DefaultListCellRenderer {
+        // ListCellRenderer 인터페이스의 추상메서드 오버라이딩. JList의 각 셀(채팅 메시지)의 렌더링 방식을 커스텀하게 해주는 메서드
         @Override
         public Component getListCellRendererComponent(JList<?> list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
             // 기본렌더링된 컴포넌트(채팅메시지 셀)를 반환

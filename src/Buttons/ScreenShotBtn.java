@@ -32,6 +32,7 @@ public class ScreenShotBtn extends TemplateButton {
                 }
 
                 try {
+                    // https://m.blog.naver.com/vphljc/114783914 참조하여 스크린샷 저장 코드 작성하였음.
                     Robot screenShotRobot = new Robot(); // 화면 캡처 작업 자동화를 위한 Robot 객체 생성
 
                     Rectangle screenShotArea = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()); // 캡처할 화면 영역 설정: 모니터 화면 전체
