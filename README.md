@@ -18,20 +18,29 @@
 
 > 참고 프로그램: 캐치마인드
 
+<br><br>
+
+## 플레이 영상
+> **Youtube video (`Click on the image below` to go to the YouTube link.)**
+
 <br>
+
+ [![game Demonstration video](https://github.com/user-attachments/assets/8d135cc4-c80c-4480-bafd-cbe4250e3900)]([https://youtu.be/Njj6Z49qLPU?si=CRpZx0I0f039usYY](https://youtu.be/xeist3sCp1A?si=sFkbxxbVz7RqX_c0))  **```👈 Click HERE!```**
+ 
+<br><br>
 
 ## 주요 기능
 
 ![image](https://github.com/user-attachments/assets/880c10f0-3865-4324-a958-bfade6e56732)
 ![image](https://github.com/user-attachments/assets/50d3b0b9-4c0a-457b-aabc-a7d2abff4439)
 
-<br>
+<br><br>
 
 ## 시스템 구성도
 
 ![image](https://github.com/user-attachments/assets/04d3906f-74ed-4d26-beb2-12504c422dc7)
 
-<br>
+<br><br>
 
 ## 프로토콜 흐름도
 
@@ -58,7 +67,4 @@
 ![image](https://github.com/user-attachments/assets/90ae4278-7c4c-4235-8fad-aa92b0e5b387)
 ![image](https://github.com/user-attachments/assets/c34575d2-9b38-4c97-81d5-2a4dfed0232a)
 
-
-
-
-<br><br>
+<br><br><br>
